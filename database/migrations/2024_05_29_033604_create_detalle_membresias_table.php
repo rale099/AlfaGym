@@ -11,13 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('inventario_equipos', function (Blueprint $table) {
+        Schema::create('detalle_membresias', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre', 80);
-            $table->decimal('peso', 8,2);
-            $table->decimal('cantidad', 8,2 );
-            $table->unsignedBigInteger('equipo_id');
-            $table->foreign('equipo_id')->references('id')->on('equipos');
+            $table->date('fecha_inicio');
+            $table->date('fecha_final');
+            $table->char('estado');
             $table->timestamps();
         });
     }
@@ -27,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('inventario_equipos');
+        Schema::dropIfExists('detalle_membresias');
     }
 };
