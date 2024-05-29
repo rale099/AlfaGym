@@ -63,7 +63,7 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>Alfa</b>Gym',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -316,60 +316,49 @@ return [
             'can' => 'manage-blog',
         ],
         [
-            'text' => 'pages',
+            'text' => 'Inicio',
             'url' => 'admin/pages',
-            'icon' => 'far fa-fw fa-file',
-            'label' => 4,
+            'icon' => 'fas fw fa-home',
             'label_color' => 'success',
         ],
-        ['header' => 'account_settings'],
         [
-            'text' => 'profile',
+            'text' => 'Registo de Usuarios',
             'url' => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
+            'icon' => 'far fa-fw  fa-address-card',
         ],
         [
-            'text' => 'change_password',
+            'text' => 'Usuarios',
             'url' => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
+            'icon' => 'far fa-fw fa-user',
         ],
         [
-            'text' => 'multilevel',
-            'icon' => 'fas fa-fw fa-share',
+            'text' => 'Registro de productos',
+            'url' => 'admin/settings',
+            'icon' => 'far fa-fw   fa-clipboard',
+        ],
+        [
+            'text' => 'productos',
+            'url' => 'admin/settings',
+            'icon' => 'fas fw fa-shopping-cart',
+        ],
+        [
+            'text' => 'Inventario',
+            'icon' => 'fas fa-fw fa-paste',
             'submenu' => [
                 [
-                    'text' => 'level_one',
+                    'text' => 'Inventario Maquinas ',
                     'url' => '#',
                 ],
                 [
-                    'text' => 'level_one',
+                    'text' => 'Inventario Equipo',
                     'url' => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url' => '#',
-                        ],
-                        [
-                            'text' => 'level_two',
-                            'url' => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url' => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url' => '#',
-                                ],
-                            ],
-                        ],
-                    ],
                 ],
                 [
-                    'text' => 'level_one',
+                    'text' => 'Inventario Productos',
                     'url' => '#',
                 ],
             ],
+            
         ],
         ['header' => 'labels'],
         [
