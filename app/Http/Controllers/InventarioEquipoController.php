@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Equipo;
+use App\Models\InventarioEquipo;
 
-class EquipoController extends Controller
+class InventarioEquipoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +13,8 @@ class EquipoController extends Controller
     public function index()
     {
         try {
-            $equipo = Equipo::all();
-            return response()->json($equipo);
+            $inEqui = InventarioEquipo::all();
+            return response()->json($inEqui);
         } catch (\Exception $e) {
             return $e->getMessage();
         }

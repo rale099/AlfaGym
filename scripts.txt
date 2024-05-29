@@ -1,0 +1,7 @@
+//EQUIPOS
+INSERT INTO `equipos`(`id`, `tipo`, `created_at`, `updated_at`)
+VALUES ('','','','')
+
+//INVENTARIO_EQUIPOS
+INSERT INTO `inventario_equipos`(`id`, `nombre`, `peso`, `cantidad`, `equipo_id`, `created_at`, `updated_at`) 
+VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]')
