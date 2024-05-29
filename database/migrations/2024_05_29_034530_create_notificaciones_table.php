@@ -11,21 +11,21 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('inventario_equipos', function (Blueprint $table) {
+        Schema::create('notificaciones', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre', 80);
-            $table->decimal('peso', 8,2);
-            $table->decimal('cantidad', 8,2 );
-            $table->unsignedBigInteger('equipo_id');
-            $table->foreign('equipo_id')->references('id')->on('equipos');
+            $table->string('titulo', 80);
+            $table->string('mensaje', 120);
+            $table->date('fecha_alerta');
+            $table->foreign('usuario_id')->references('id')->on('usuarios');
             $table->timestamps();
         });
     }
+
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('inventario_equipos');
+        Schema::dropIfExists('notificaciones');
     }
 };
