@@ -9,6 +9,6 @@ class Membresia extends Model
 {
     use HasFactory;
     public function producto_servicios(){
-        return $this->hasOne(ProductoServicio::class);
+            return $this->hasOne(ProductoServicio::class);
     }
 }

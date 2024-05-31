@@ -15,7 +15,7 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::get('/', function () {
-    return view('admin');
+    return view('home');
 });
 
 Auth::routes();

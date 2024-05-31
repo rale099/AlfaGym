@@ -1,7 +1,71 @@
 //EQUIPOS
-INSERT INTO `equipos`(`id`, `tipo`, `created_at`, `updated_at`)
-VALUES ('','','','')
+INSERT INTO `equipos`(`tipo`)
+VALUES ('Maquinaria')
 
 //INVENTARIO_EQUIPOS
-INSERT INTO `inventario_equipos`(`id`, `nombre`, `peso`, `cantidad`, `equipo_id`, `created_at`, `updated_at`) 
+INSERT INTO `inventario_equipos`(`nombre`, `peso`, `cantidad`, `equipo_id`) 
+VALUES ('Hack','',1 ,1)
+
+// CATEGORIA
+INSERT INTO `categorias`(`nombre`)
+VALUES ('Energizante')
+
+//INVENTARIO
+INSERT INTO `inventarios`(`stock`, `stock_minimo`, `categoria_id`)
+VALUES ('50','10','1')
+
+//MEMBRESIAS
+INSERT INTO `membresias`(`duracion`) VALUES
+(15)
+
+//TIPOS
+INSERT INTO `tipos`(`nombre`)
+VALUES ('Producto')
+
+//PRODUCTO_SERVICIOS
+INSERT INTO `producto_servicios`(`nombre`, `precio_unitario`, `tipo_id`, `membresia_id`)
+VALUES ('Raptor',1.25 ,'1','')
+
+//DETALLE_VENTAS
+INSERT INTO `detalle_ventas`(`id`, `cantidad`, `precio_unitario`, `venta_id`, `producto_servicio_id`, `created_at`, `updated_at`)
 VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]')
+
+//VENTAS
+INSERT INTO `ventas`(`id`, `fecha`, `valor_total`, `created_at`, `updated_at`)
+VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]')
+
+//ROLES
+INSERT INTO `roles`(`id`, `nombre`, `created_at`, `updated_at`)
+VALUES ('[value-1]','[value-2]','[value-3]','[value-4]')
+
+//SUCURSALES
+INSERT INTO `sucursales`(`id`, `nombre`, `direccion`, `created_at`, `updated_at`)
+VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]')
+
+//HORARIOS
+INSERT INTO `horarios`(`id`, `dia_semana`, `desde`, `hasta`, `sucursal_id`, `created_at`, `updated_at`)
+VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]')
+
+//DETALLE_MEMBRESIAS
+INSERT INTO `detalle_membresias`(`id`, `fecha_inicio`, `fecha_final`, `estado`, `created_at`, `updated_at`)
+VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]')
+
+//USUARIOS
+INSERT INTO `usuarios`(`id`, `nombre`, `apellido`, `correo`, `contrasena`, `codigo`, `rol_id`, `membresia_id`, `sucursal_id`, `created_at`, `updated_at`)
+VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]','[value-8]','[value-9]','[value-10]','[value-11]')
+
+//COMENTARIO_USUARIOS
+INSERT INTO `comentario_clientes`(`id`, `comentario`, `fecha_comentario`, `usuario_id`, `created_at`, `updated_at`)
+VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]')
+
+//NOTIFICACIONES
+INSERT INTO `notificaciones`(`id`, `titulo`, `mensaje`, `fecha_alerta`, `usuario_id`, `created_at`, `updated_at`)
+VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]')
+
+
+
+
+
+
+
+

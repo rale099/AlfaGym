@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('comentario_clientes', function (Blueprint $table) {
             $table->id();
             $table->string('comentario', 300);
-            $table->datetimes('fecha_comentario');
+            $table->datetime('fecha_comentario');
+            $table->unsignedBigInteger('usuario_id');
             $table->foreign('usuario_id')->references('id')->on('usuarios');
             $table->timestamps();
         });

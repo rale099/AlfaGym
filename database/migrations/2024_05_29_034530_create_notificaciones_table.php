@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('titulo', 80);
             $table->string('mensaje', 120);
             $table->date('fecha_alerta');
+            $table->unsignedBigInteger('usuario_id');
             $table->foreign('usuario_id')->references('id')->on('usuarios');
             $table->timestamps();
         });

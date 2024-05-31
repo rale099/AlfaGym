@@ -11,7 +11,10 @@ class ProductoServicio extends Model
     public function tipos(){
         return $this->hasMany(Tipo::class);
     }
-    public function producto_servicios(){
-        return $this->hasMany(ProductoServicio::class);
+    public function membresias(){
+        return $this->belongsTo(Membresia::class);
+    }
+    public function inventarios(){
+        return $this->hasOne(Inventario::class);
     }
 }

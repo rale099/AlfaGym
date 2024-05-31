@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->decimal('stock', 8,2);
             $table->decimal('stock_minimo', 8,2);
+            $table->unsignedBigInteger('categoria_id');
             $table->foreign('categoria_id')->references('id')->on('categorias');
             $table->timestamps();
         });

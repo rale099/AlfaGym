@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('membresias', function (Blueprint $table) {
             $table->id();
             $table->decimal('duracion', 8, 2);
-            $table->foreign('producto_servicio_id')->references('id')->on('producto_servicios');
             $table->timestamps();
         });
     }

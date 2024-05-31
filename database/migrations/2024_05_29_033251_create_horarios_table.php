@@ -11,11 +11,23 @@ return new class extends Migration
      */
     public function up(): void
     {
+        /*
         Schema::create('horarios', function (Blueprint $table) {
             $table->id();
             $table->date('dia_semana');
-            $table->timestamp('desde');
-            $table->timestamp('hasta');
+            $table->date('desde');
+            $table->date('hasta');
+            $table->unsignedBigInteger('sucursal_id');
+            $table->foreign('sucursal_id')->references('id')->on('sucursales');
+            $table->timestamps();
+        });
+        */
+        Schema::create('horarios', function (Blueprint $table) {
+            $table->id();
+            $table->string('dia_semana');
+            $table->time('desde');
+            $table->time('hasta');
+            $table->unsignedBigInteger('sucursal_id');
             $table->foreign('sucursal_id')->references('id')->on('sucursales');
             $table->timestamps();
         });

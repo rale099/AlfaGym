@@ -15,7 +15,9 @@ return new class extends Migration
             $table->id();
             $table->decimal('cantidad', 8,2);
             $table->decimal('precio_unitario', 8,2);
-            $table->foreign('ventas_id')->references('id')->on('ventas');
+            $table->unsignedBigInteger('venta_id');
+            $table->foreign('venta_id')->references('id')->on('ventas');
+            $table->unsignedBigInteger('producto_servicio_id');
             $table->foreign('producto_servicio_id')->references('id')->on('producto_servicios');
             $table->timestamps();
         });
