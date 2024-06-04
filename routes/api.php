@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\EquipoController;
 use App\Http\Controllers\InventarioEquipoController;
 use Illuminate\Http\Request;
@@ -19,5 +20,5 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::resource('equipos',EquipoController::class);
-Route::resource('inventario_equipos',InventarioEquipoController::class);
+
+// Route::resource('admin.categoria-component',CategoriaController::class);

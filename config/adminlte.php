@@ -63,9 +63,8 @@ return [
     |
     */
 
-    'logo' => '<b>Alfa</b>Gym',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
-    'logo_img_class' => 'brand-image img-circle elevation-3',
+    'logo' => '<b>Alfa</b>Fitness<b>Gym</b>',
+    'logo_img' => 'images/logo.jpg',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
     'logo_img_alt' => 'Admin Logo',
@@ -113,11 +112,9 @@ return [
         'enabled' => true,
         'mode' => 'fullscreen',
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
-            'alt' => 'AdminLTE Preloader Image',
-            'effect' => 'animation__shake',
-            'width' => 60,
-            'height' => 60,
+            'path' => 'images/logo.jpg',
+            'width' => 600,
+            'height' => 400,
         ],
     ],
 
@@ -315,50 +312,134 @@ return [
             'url' => 'admin/blog',
             'can' => 'manage-blog',
         ],
+
         [
             'text' => 'Inicio',
-            'url' => 'admin/pages',
+            'url' => '/home',
             'icon' => 'fas fw fa-home',
-            'label_color' => 'success',
-        ],
-        [
-            'text' => 'Registo de Usuarios',
-            'url' => 'admin/settings',
-            'icon' => 'far fa-fw  fa-address-card',
         ],
         [
             'text' => 'Usuarios',
-            'url' => 'admin/settings',
             'icon' => 'far fa-fw fa-user',
+            'submenu' => [
+                        [
+                            'text' => 'Registo de Usuarios',
+                            'url' => '/',
+                        ], 
+                        [
+                            'text' => 'Detalle Membresía',
+                            'url' => '',
+                        ],
+            ],
         ],
         [
-            'text' => 'Registro de productos',
-            'url' => 'admin/settings',
-            'icon' => 'far fa-fw   fa-clipboard',
-        ],
-        [
-            'text' => 'productos',
-            'url' => 'admin/settings',
-            'icon' => 'fas fw fa-shopping-cart',
+            'text' => 'Productos y servicios ',
+            'icon' => 'fas fa-fw fa-paste',
+            'submenu' => [
+                [
+                    'text' => 'Categorias',
+                    'url'=> '/categorias',
+                ],
+                [
+                    'text' => 'Tipos',
+                    'url'=> '/tipos',
+                ],
+                [
+                    'text' => 'Productos',
+                    'url' => '/pro_ser',
+                ],
+                [
+                    'text' => 'Membresías',
+                    'url'=> '/membresias',
+                ],
+                [
+                    'text' => 'Ventas',
+                    'url'=> '/ventas',
+                ],
+                
+            ],
+            
         ],
         [
             'text' => 'Inventario',
             'icon' => 'fas fa-fw fa-paste',
             'submenu' => [
                 [
-                    'text' => 'Inventario Maquinas ',
-                    'url' => '#',
-                ],
-                [
-                    'text' => 'Inventario Equipo',
+                    'text' => 'Inventario Maquinaria y Equipo',
                     'url' => '#',
                 ],
                 [
                     'text' => 'Inventario Productos',
-                    'url' => '#',
+                    'url' => '/inventarios',
                 ],
             ],
             
+        ],
+        [
+            'text' => 'Compra de productos y proveedores',
+            'icon' => 'fas fw fa-shopping-cart',
+            'submenu' => [
+                        [
+                            'text' => 'Proveedores',
+                            'url' => '/',
+                        ], 
+                        [
+                            'text' => 'Compras de productos',
+                            'url' => '/#',
+                        ],
+            ],
+        ],
+        [
+            'text' => 'Detalles',
+            'icon' => 'far fa-fw  fa-address-card',
+            'submenu' => [
+                        [
+                            'text' => 'Detalles de Compras',
+                            'url' => '/#',
+                        ], 
+                        [
+                            'text' => 'Detalles de Ventas',
+                            'url' => '/detaVentas',
+                        ],
+            ],
+        ],
+        [
+            'text' => 'Horarios y sucursales',
+            'icon' => 'far fa-fw fa-calendar',
+            'submenu' => [
+                        [
+                            'text' => 'Horarios',
+                            'url' => '/horarios',
+                        ], 
+                        [
+                            'text' => 'Sucursales',
+                            'url' => '/sucursales',
+                        ],
+            ],
+        ],
+        [
+            'text' => 'notificaciones',
+            'url' => '/notificaciones',
+            'icon' => 'far fa-fw fa-bell',
+        ],
+        [
+            'text' => 'Comentarios',
+            'url' => '/comentarios',
+            'icon' => 'far fa-fw fa-comment',
+        ],
+        [
+            'text' => 'Reportes',
+            'icon' => 'far fa-fw fa-chart-pie',
+            'submenu' => [
+                        [
+                            'text' => 'Reportes de Ventas',
+                            'url' => '/#',
+                        ], 
+                        [
+                            'text' => 'Reportes de Compras',
+                            'url' => '/#',
+                        ],
+            ],
         ],
         ['header' => 'labels'],
         [

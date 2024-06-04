@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Sucursal extends Model
 {
     use HasFactory;
+
+    protected $table = 'sucursales';
     public function sucursal(){
         return $this->hasMany(Sucursal::class);
     }

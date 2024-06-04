@@ -44,35 +44,58 @@ class DatabaseSeeder extends Seeder
             
             //Datos Productos y Servicios
             DB::table('categorias')->insert([
-                'nombre' => 'Energizante'
+                'id' => 1,
+                'nombre' => 'Energizante',
+            ]);
+            DB::table('categorias')->insert([
+                'id' => 2,
+                'nombre' => 'Hidratante',
             ]);
             DB::table('inventarios')->insert([
-                'stock'=>'50',
-                'stock_minimo'=>'10',
-                'categoria_id'=>'1'
+                'stock'=> 50,
+                'stock_minimo'=> 10,
+                'categoria_id'=> 1
             ]);
             DB::table('membresias')->insert([
-                'duracion'=>'15'
+                'duracion'=> 15
             ]);
             DB::table('tipos')->insert([
+                'id' => 1,
                 'nombre'=>'Producto'
             ]);
+            DB::table('tipos')->insert([
+                'id' => 2,
+                'nombre'=>'Mmebresia'
+            ]);
             DB::table('producto_servicios')->insert([
+                'id' => 1,
+                'nombre' => 'Raptor',
+                'precio_unitario' => 1.25,
+                'tipo_id' => 1,
+            ]);
+            DB::table('producto_servicios')->insert([
+                'id' => 2,
                 'nombre' => 'Gatorade',
                 'precio_unitario' => 1.25,
                 'tipo_id' => 1,
             ]);
-            
+            DB::table('producto_servicios')->insert([
+                'id' => 3,
+                'nombre' => 'Membresia 15 días',
+                'precio_unitario' => 6.00,
+                'tipo_id' => 2,
+                'membresia_id' => 1
+            ]);
             //Ventas y Detalles
             DB::table('ventas')->insert([
                 'fecha' => Carbon::create('2024', '05','21')->toDateString(),
                 'valor_total' => 2.20,
             ]);
             DB::table('detalle_ventas')->insert([
-                'cantidad' => '2',
+                'cantidad' => 2,
                 'precio_unitario' => 2.20,
-                'venta_id' => '1',
-                'producto_servicio_id' => '1',
+                'venta_id' => 1,
+                'producto_servicio_id' => 1,
             ]);
             
         
