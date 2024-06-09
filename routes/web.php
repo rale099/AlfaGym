@@ -52,3 +52,5 @@ Route::resource('detalleMem', DetalleMembresia::class);
 Route::resource('usuarios', UsuarioController::class);
 Route::resource('comentarios', ComentarioController::class);
 Route::resource('notificaciones', NotificacionController::class);
+
+
