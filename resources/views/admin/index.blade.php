@@ -12,18 +12,15 @@
 
 @section('js')
     <!-- Script para cargar la API de Google Maps -->
-    <script async  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxvNn7ZfiUUQgyQqXapbCOvChKJ_FMzgM&callback=initMap"></script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxvNn7ZfiUUQgyQqXapbCOvChKJ_FMzgM&callback=initMap"></script>
 
     <!-- Script para inicializar el mapa -->
     <script>
-        
-            function initMap() {
-    var map = new google.maps.Map(document.getElementById('map-container'), {
-        center: { lat: -16.0704139, lng: -65.5969469 },
-        zoom: 6
-    });
-}
-
-        
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map-container'), {
+                center: { lat: 13.960088235421136, lng: -89.18612534860371 },
+                zoom: 30
+            });
+        }
     </script>
 @stop
