@@ -2,9 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Spatie\Permission\Models\Role;
 
 class UsuarioSeeder extends Seeder
 {
@@ -13,15 +15,19 @@ class UsuarioSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('usuarios')->insert([
+        DB::table('users')->insert([
             'name' => 'Navar Elenor',
             'email' => 'navarelenor@gmail.com',
             'password' => '123456789',
             'codigo' => 'ne24001',
-            'rol_id' => '1',
-            'detalle_membresia_id' => '1',
+            'membresia_id' => '1',
             'sucursal_id' => '1',
         ]);
+        $role1 = Role::create(['name' => 'admin']);
+        $role2 = Role::create(['name' => 'editor']);
+        $user = User::find(1);
+        $user->role_id($role1);
+        $user->save();
     }
     /*
     $table->string('name');

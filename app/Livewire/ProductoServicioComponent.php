@@ -9,7 +9,7 @@ class ProductoServicioComponent extends Component
 {
     public function render()
     {
-        $proSer = ProductoServicio::paginate();
+        $proSer = ProductoServicio::with('membresias')->paginate(10);
         return view('livewire.producto-servicio-component', compact('proSer'));
     }
 }

@@ -11,9 +11,6 @@ class Usuario extends Model
     public function usuario(){
         return $this->hasMany(Usuario::class);
     }
-    public function roles(){
-        return $this->hasMany(Rol::class);
-    }
     public function membresias(){
         return $this->hasMany(Membresia::class);
     }

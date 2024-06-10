@@ -12,12 +12,7 @@ class EquipoController extends Controller
      */
     public function index()
     {
-        try {
-            $equipo = Equipo::all();
-            return response()->json($equipo);
-        } catch (\Exception $e) {
-            return $e->getMessage();
-        }
+        return view('admin.equipo');
     }
 
     /**

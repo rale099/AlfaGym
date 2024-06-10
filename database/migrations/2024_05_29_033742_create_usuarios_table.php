@@ -27,21 +27,14 @@ return new class extends Migration
             $table->timestamps();
         });
         */
-        Schema::create('usuarios', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
-            $table->char('codigo', 7);
-            $table->unsignedBigInteger('rol_id');
-            $table->foreign('rol_id')->references('id')->on('roles');
-            $table->unsignedBigInteger('detalle_membresia_id');
-            $table->foreign('detalle_membresia_id')->references('id')->on('detalle_membresias');
-            $table->unsignedBigInteger('sucursal_id');
-            $table->foreign('sucursal_id')->references('id')->on('sucursales');
-            $table->timestamps();
+        Schema::table('users', function (Blueprint $table) {
+            $table->char('codigo', 7)->nullable();
+            $table->unsignedBigInteger('membresia_id')->nullable();
+            $table->foreign('membresia_id')->constrained()->onUpdate('cascade')->references('id')->on('membresias');
+            $table->unsignedBigInteger('sucursal_id')->nullable();
+            $table->foreign('sucursal_id')->constrained()->onUpdate('cascade')->references('id')->on('sucursales');
+            $table->unsignedBigInteger('role_id')->nullable();
+            $table->foreign('role_id')->constrained()->onUpdate('cascade')->references('id')->on('roles');
     });
 }
     /**
@@ -49,6 +42,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('usuarios');
+        Schema::dropIfExists('users');
     }
 };

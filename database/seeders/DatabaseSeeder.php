@@ -40,7 +40,16 @@ class DatabaseSeeder extends Seeder
                 'compra_producto_id'=>'',
             ]);
             */
-
+            DB::table('equipos')->insert([
+                'id' => 1,
+                'tipo' => 'Equipo',
+            ]);
+            DB::table('inventario_equipos')->insert([
+                'nombre' => 'Mancuerna',
+                'peso' => 10,
+                'cantidad' => 3,
+                'equipo_id' => 1,
+            ]);
             
             //Datos Productos y Servicios
             DB::table('categorias')->insert([
@@ -51,13 +60,33 @@ class DatabaseSeeder extends Seeder
                 'id' => 2,
                 'nombre' => 'Hidratante',
             ]);
+            
+            //inventarios
             DB::table('inventarios')->insert([
+                'id' => 1,
                 'stock'=> 50,
                 'stock_minimo'=> 10,
                 'categoria_id'=> 1
             ]);
+            DB::table('inventarios')->insert([
+                'id' => 2,
+                'stock'=> 50,
+                'stock_minimo'=> 10,
+                'categoria_id'=> 2
+            ]);
+            DB::table('inventarios')->insert([
+                'id' => 3,
+                'stock'=> 50,
+                'stock_minimo'=> 10,
+                'categoria_id'=> 2
+            ]);
+            
+            //membresias
             DB::table('membresias')->insert([
                 'duracion'=> 15
+            ]);
+            DB::table('membresias')->insert([
+                'duracion'=> 30
             ]);
             DB::table('tipos')->insert([
                 'id' => 1,
@@ -65,19 +94,23 @@ class DatabaseSeeder extends Seeder
             ]);
             DB::table('tipos')->insert([
                 'id' => 2,
-                'nombre'=>'Mmebresia'
+                'nombre'=>'Mebresia'
             ]);
+            
+            //productos
             DB::table('producto_servicios')->insert([
                 'id' => 1,
                 'nombre' => 'Raptor',
                 'precio_unitario' => 1.25,
                 'tipo_id' => 1,
+                'inventario_id'=> 1,
             ]);
             DB::table('producto_servicios')->insert([
                 'id' => 2,
                 'nombre' => 'Gatorade',
                 'precio_unitario' => 1.25,
                 'tipo_id' => 1,
+                'inventario_id'=> 2,
             ]);
             DB::table('producto_servicios')->insert([
                 'id' => 3,
@@ -86,16 +119,46 @@ class DatabaseSeeder extends Seeder
                 'tipo_id' => 2,
                 'membresia_id' => 1
             ]);
+            DB::table('producto_servicios')->insert([
+                'id' => 4,
+                'nombre' => 'Membresia 30 días',
+                'precio_unitario' => 12.00,
+                'tipo_id' => 2,
+                'membresia_id' => 2
+            ]);
+            DB::table('producto_servicios')->insert([
+                'id' => 5,
+                'nombre' => 'Agua',
+                'precio_unitario' => 0.15,
+                'tipo_id' => 1,
+                'inventario_id'=> 3,
+            ]);
             //Ventas y Detalles
             DB::table('ventas')->insert([
                 'fecha' => Carbon::create('2024', '05','21')->toDateString(),
                 'valor_total' => 2.20,
             ]);
+            DB::table('ventas')->insert([
+                'fecha' => Carbon::create('2024', '06','21')->toDateString(),
+                'valor_total' => 5.50,
+            ]);
             DB::table('detalle_ventas')->insert([
                 'cantidad' => 2,
-                'precio_unitario' => 2.20,
+                'precio_unitario' => 1.10,
                 'venta_id' => 1,
                 'producto_servicio_id' => 1,
+            ]);
+            DB::table('detalle_ventas')->insert([
+                'cantidad' => 7,
+                'precio_unitario' => 1.10,
+                'venta_id' => 1,
+                'producto_servicio_id' => 1,
+            ]);
+            DB::table('detalle_ventas')->insert([
+                'cantidad' => 5,
+                'precio_unitario' => 1.10,
+                'venta_id' => 2,
+                'producto_servicio_id' => 2,
             ]);
             
         
@@ -110,19 +173,12 @@ class DatabaseSeeder extends Seeder
                 HorariosSeeder::class
             ]);
             
-            DB::table('roles')->insert([
-                'nombre' => 'admin',
-            ]);
-            DB::table('detalle_membresias')->insert([
-                'fecha_inicio' => Carbon::create('2024', '04','01')->toDateString(),
-                'fecha_final' => Carbon::create('2024', '04','15')->toDateString(),
-                'estado' => 'I',
-            ]);
             //Tabla usuarios
             $this->call([
                 UsuarioSeeder::class
             ]);
 
+            
             /*DB::table('comentarios')->insert([
                 
             ]);

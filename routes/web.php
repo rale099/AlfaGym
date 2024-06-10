@@ -3,10 +3,12 @@
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ComentarioController;
 use App\Http\Controllers\DetalleVentaController;
+use App\Http\Controllers\EquipoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HorarioController;
 use App\Http\Controllers\InventarioController;
+use App\Http\Controllers\InventarioEquipoController;
 use App\Http\Controllers\MembresiaController;
 use App\Http\Controllers\NotificacionController;
 use App\Http\Controllers\ProductoServicioController;
@@ -52,3 +54,5 @@ Route::resource('detalleMem', DetalleMembresia::class);
 Route::resource('usuarios', UsuarioController::class);
 Route::resource('comentarios', ComentarioController::class);
 Route::resource('notificaciones', NotificacionController::class);
+Route::resource('equipos', EquipoController::class);
+Route::resource('inventarioEqui', InventarioEquipoController::class);

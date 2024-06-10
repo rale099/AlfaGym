@@ -324,7 +324,7 @@ return [
             'submenu' => [
                         [
                             'text' => 'Registo de Usuarios',
-                            'url' => '/',
+                            'url' => '/usuarios',
                         ], 
                         [
                             'text' => 'Detalle Membresía',
@@ -366,7 +366,11 @@ return [
             'submenu' => [
                 [
                     'text' => 'Inventario Maquinaria y Equipo',
-                    'url' => '#',
+                    'url' => '/inventarioEqui',
+                ],
+                [
+                    'text' => 'Equipo',
+                    'url' => '/equipos',
                 ],
                 [
                     'text' => 'Inventario Productos',

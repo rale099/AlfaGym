@@ -12,6 +12,6 @@ class Inventario extends Model
         return $this->hasMany(Categoria::class);
     }
     public function producto_servicios(){
-        return $this->hasOne(ProductoServicio::class);
+        return $this->hasOne(ProductoServicio::class, );
     }
 }

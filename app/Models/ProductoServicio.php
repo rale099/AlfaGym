@@ -15,6 +15,6 @@ class ProductoServicio extends Model
         return $this->belongsTo(Membresia::class);
     }
     public function inventarios(){
-        return $this->hasOne(Inventario::class);
+        return $this->hasOne(Inventario::class, 'id', 'inventario_id');
     }
 }

@@ -2,24 +2,22 @@
 <div>
     <div class="card">
         <div class="card-header"></div>
-        @if($inventarios->count())
+        @if($productos->count())
             <div class="card-boy">
                 <table class="table table-striped">
                     <thead>
                         <tr>    
                             <td>ID</td> 
+                            <td>Producto</td>
                             <td>Stock</td>
-                            <td>Stock Minimo</td>
-                            <td>Categoria</td>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($inventarios as $inve)
+                        @foreach ($productos as $producto)
                         <tr>
-                            <td>{{$inve->id}}</td>
-                            <td>{{$inve->stock}}</td>
-                            <td>{{$inve->stock_minimo}}</td>
-                            <td>{{$inve->categoria_id}}</td>
+                            <td>{{$producto->id}}</td>
+                            <td>{{$producto->nombre}}</td>
+                            <td>{{$producto->inventarios == null ? '' : $producto->inventarios->stock}}</td>
                         </tr>
                         @endforeach
                         

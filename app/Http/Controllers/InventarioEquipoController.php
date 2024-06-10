@@ -12,12 +12,7 @@ class InventarioEquipoController extends Controller
      */
     public function index()
     {
-        try {
-            $inEqui = InventarioEquipo::all();
-            return response()->json($inEqui);
-        } catch (\Exception $e) {
-            return $e->getMessage();
-        }
+        return view('admin.inventario_equipo');
     }
 
     /**

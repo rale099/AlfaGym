@@ -1,24 +1,20 @@
 <div>
     <div class="card">
         <div class="card-header"></div>
-        @if($comentarios->count())
+        @if($equipos->count())
             <div class="card-boy">
                 <table class="table table-striped">
                     <thead>
                         <tr>    
-                            <td>ID</td> 
-                            <td>Comentarios</td>
-                            <td>Publicado el: </td>
-                            <td>Publicado por el usuario: </td>
+                            <td>Id</td> 
+                            <td>Tipo</td>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($comentarios as $comen)
+                        @foreach ($equipos as $equipo)
                         <tr>
-                            <td>{{$comen->id}}</td>
-                            <td>{{$comen->comentario}}</td>
-                            <td>{{$comen->fecha_comentario}}</td>
-                            <td>{{$comen->usuario_id}}</td>
+                            <td>{{$equipo->id}}</td>
+                            <td>{{$equipo->tipo}}</td>
                             <td></td>
                         </tr>
                         @endforeach
@@ -30,7 +26,7 @@
             </div>
         @else
             <div class="card-body">
-                <strong>No hay Comentarios publicados</strong>
+                <strong>No hay registros de Equipos</strong>
             </div>
         @endif
     </div>

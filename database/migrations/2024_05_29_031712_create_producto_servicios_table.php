@@ -19,6 +19,8 @@ return new class extends Migration
             $table->foreign('tipo_id')->references('id')->on('tipos');
             $table->unsignedBigInteger('membresia_id')->nullable();
             $table->foreign('membresia_id')->references('id')->on('membresias');
+            $table->unsignedBigInteger('inventario_id')->nullable();
+            $table->foreign('inventario_id')->references('id')->on('inventarios');
             $table->timestamps();
         });
     }

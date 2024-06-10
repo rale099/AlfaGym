@@ -2,20 +2,28 @@
     <div>
         <div class="card">
             <div class="card-header"></div>
-            @if($membresias->count())
+            @if($usuarios->count())
                 <div class="card-boy">
                     <table class="table table-striped">
                         <thead>
                             <tr>    
                                 <td>ID</td> 
-                                <td>Duración</td>
+                                <td>Nombre</td>
+                                <td>Correo</td>
+                                <td>Código</td>
+                                <td>Mebresia</td>
+                                <td>Sucursal</td>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($membresias as $mem)
+                            @foreach ($usuarios as $usuario)
                             <tr>
-                                <td>{{$mem->id}}</td>
-                                <td>{{round($mem->duracion)}} días</td>
+                                <td>{{$usuario->id}}</td>
+                                <td>{{$usuario->name}}</td>
+                                <td>{{$usuario->email}}</td>
+                                <td>{{$usuario->codigo}}</td>
+                                <td>{{$usuario->membresias->producto_servicios->nombre}}</td>
+                                <td>{{$usuario->sucursal_id}}</td>
                             </tr>
                             @endforeach
                             
@@ -27,9 +35,10 @@
                 </div>
             @else
                 <div class="card-body">
-                    <strong>No hay registros de Membresías</strong>
+                    <strong>No hay registros de Tipo</strong>
                 </div>
             @endif
         </div>
     </div>
 </div>
+
