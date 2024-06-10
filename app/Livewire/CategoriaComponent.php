@@ -11,5 +11,16 @@ class CategoriaComponent extends Component
     {
         $categorias = Categoria::paginate(10);
         return view('livewire.categoria-component', compact('categorias'));
+
     }
+
+    
+    
 }
+
+        
+
+
+
+
+
