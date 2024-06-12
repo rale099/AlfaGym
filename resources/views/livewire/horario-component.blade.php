@@ -1,6 +1,5 @@
 <div class="card">
   <div class="card-header">
-    Listado de Horarios
   </div>
   <div class="card-body">
     <table class="table table-bordered table-hover">
@@ -25,9 +24,7 @@
           <td class="text-center">{{ $horario->sucursal_id }}</td>
           <td class="text-center">
         <div class="button-container">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Añadir</button>
         <button type="button" class="btn btn-warning btn-sm">Editar</button>
-        <button type="button" class="btn btn-danger btn-sm">Eliminar</button>
         </div>
           </td>
         </tr>

@@ -1,8 +1,10 @@
 <div class="card">
   <div class="card-body">
+    <div>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Añadir</button>
+    </div>
+    <br>
     <table class="table table-bordered table-hover">
-      <thead>
-
       <thead class="thead-dark">
          <tr>
         <th class="text-center"scope="col">ID</th>
@@ -18,7 +20,6 @@
           <td class="text-center">{{ $sucursal->direccion }}</td>
           <td class="text-center">
         <div class="button-container">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Añadir</button>
         <button type="button" class="btn btn-warning btn-sm">Editar</button>
         <button type="button" class="btn btn-danger btn-sm">Eliminar</button>
         </div>

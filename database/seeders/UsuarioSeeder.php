@@ -15,19 +15,33 @@ class UsuarioSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('users')->insert([
+        User::create([
             'name' => 'Navar Elenor',
             'email' => 'navarelenor@gmail.com',
-            'password' => '123456789',
+            'password' => bcrypt('123456789'),
             'codigo' => 'ne24001',
             'membresia_id' => '1',
             'sucursal_id' => '1',
+            
+        ])->assignRole('admin');
+
+        User::create([
+            'name' => 'Mang Navar',
+            'email' => 'mangnavar@gmail.com',
+            'password' => bcrypt('123456789'),
+            'codigo' => 'mn24001',
+            'membresia_id' => '2',
+            'sucursal_id' => '1',
+        ])->assignRole('usuario');
+
+        User::create([
+            'name' => 'Xenover Navar',
+            'email' => 'xenovernavar@gmail.com',
+            'password' => bcrypt('123456789'),
+            'codigo' => 'xn24001',
+            'membresia_id' => '2',
+            'sucursal_id' => '1',
         ]);
-        $role1 = Role::create(['name' => 'admin']);
-        $role2 = Role::create(['name' => 'editor']);
-        $user = User::find(1);
-        $user->role_id($role1);
-        $user->save();
     }
     /*
     $table->string('name');

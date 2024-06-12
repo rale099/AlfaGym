@@ -15,7 +15,7 @@ return [
     */
 
     'title' => 'AdminLTE 3',
-    'title_prefix' => '',
+    'title_prefix' => 'Alfa Gym',
     'title_postfix' => '',
 
     /*
@@ -30,7 +30,7 @@ return [
     |
     */
 
-    'use_ico_only' => false,
+    'use_ico_only' => true,
     'use_full_favicon' => false,
 
     /*
@@ -65,6 +65,7 @@ return [
 
     'logo' => '<b>Alfa</b>Fitness<b>Gym</b>',
     'logo_img' => 'images/logo.jpg',
+    'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
     'logo_img_alt' => 'Admin Logo',
@@ -110,9 +111,10 @@ return [
 
     'preloader' => [
         'enabled' => true,
-        'mode' => 'fullscreen',
         'img' => [
             'path' => 'images/logo.jpg',
+            'alt' => 'AdminLTE Preloader Image',
+            'effect' => 'animation__shake',
             'width' => 600,
             'height' => 400,
         ],
@@ -322,15 +324,15 @@ return [
             'text' => 'Usuarios',
             'icon' => 'far fa-fw fa-user',
             'submenu' => [
-                        [
-                            'text' => 'Registo de Usuarios',
-                            'url' => '/usuarios',
-                        ], 
-                        [
-                            'text' => 'Detalle Membresía',
-                            'url' => '',
+                            [
+                                'text' => 'Registo de Usuarios',
+                                'url' => '/usuarios',
+                            ], 
+                            [
+                                'text' => 'Membresías',
+                                'url'=> '/membresias',
+                            ],
                         ],
-            ],
         ],
         [
             'text' => 'Productos y servicios ',
@@ -347,18 +349,8 @@ return [
                 [
                     'text' => 'Productos',
                     'url' => '/pro_ser',
-                ],
-                [
-                    'text' => 'Membresías',
-                    'url'=> '/membresias',
-                ],
-                [
-                    'text' => 'Ventas',
-                    'url'=> '/ventas',
-                ],
-                
-            ],
-            
+                ],  
+            ],   
         ],
         [
             'text' => 'Inventario',
@@ -398,13 +390,13 @@ return [
             'icon' => 'far fa-fw  fa-address-card',
             'submenu' => [
                         [
-                            'text' => 'Detalles de Compras',
-                            'url' => '/#',
-                        ], 
-                        [
                             'text' => 'Detalles de Ventas',
                             'url' => '/detaVentas',
                         ],
+                        [
+                            'text' => 'Detalles de Compras',
+                            'url' => '/#',
+                        ], 
             ],
         ],
         [
@@ -432,12 +424,17 @@ return [
             'icon' => 'far fa-fw fa-comment',
         ],
         [
+            'text' => 'Ventas',
+            'url'=> '/ventas',
+            'icon' => '',
+        ],
+        [
             'text' => 'Reportes',
             'icon' => 'far fa-fw fa-chart-pie',
             'submenu' => [
                         [
                             'text' => 'Reportes de Ventas',
-                            'url' => '/#',
+                            'url' => '/formulario',
                         ], 
                         [
                             'text' => 'Reportes de Compras',

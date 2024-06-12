@@ -172,13 +172,14 @@ class DatabaseSeeder extends Seeder
             $this->call([
                 HorariosSeeder::class
             ]);
-            
+
+            $this->call([
+                RoleSeeder::class
+            ]);
             //Tabla usuarios
             $this->call([
                 UsuarioSeeder::class
             ]);
-
-            
             /*DB::table('comentarios')->insert([
                 
             ]);

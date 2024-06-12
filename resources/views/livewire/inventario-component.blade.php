@@ -6,42 +6,36 @@
                 <table class="table table-striped table-bordered table-sm table-hover">
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Añadir</button>
                 <table class="table">
-            <thead class="thead-dark">
-          <tr>
-        <th class="text-center" scope="col">ID</th>
-      <th class="text-center" scope="col">Producto</th>
-      <th class="text-center" scope="col">Stock</th>
-      <th class="text-center" scope="col">Categoria</th>
-      <th class="text-center" scope="col">Acciones</th>
-      </tr>
-  </thead>
-  <tbody>
-                        @foreach ($productos as $producto)
-                        <tr>
-                            <td class="text-center">{{$producto->id}}</td>
-                            <td class="text-center">{{$producto->nombre}}</td>
-                            <td class="text-center">{{$producto->inventarios == null ? '' : $producto->inventarios->stock}}</td>
-                            <td class="text-center">{{$producto->categoria_id}}</td>
-                            <td class="text-center">
-                              <div class="button-container">
-                                <button type="button" class="btn btn-warning btn-sm">Editar</button>
-                                <button type="button" class="btn btn-danger btn-sm">Eliminar</button>
-                              </div>
-                        </tr>
-                        @endforeach
-                        
-                    </tbody>
+                  <thead class="thead-dark">
+                            <tr>
+                              <th class="text-center" scope="col">ID</th>
+                              <th class="text-center" scope="col">Producto</th>
+                              <th class="text-center" scope="col">Stock</th>
+                              <th class="text-center" scope="col">Acciones</th>
+                            </tr>
+                  </thead>
+                      <tbody>
+                          @foreach ($productos as $producto)
+                            <tr>
+                                <td class="text-center">{{$producto->id}}</td>
+                                <td class="text-center">{{$producto->nombre}}</td>
+                                <td class="text-center">{{$producto->inventarios == null ? '' : $producto->inventarios->stock}}</td>
+                                <td class="text-center">
+                                  <div class="button-container">
+                                    <button type="button" class="btn btn-warning btn-sm">Editar</button>
+                                    <button type="button" class="btn btn-danger btn-sm">Eliminar</button>
+                                  </div>
+                            </tr>
+                          @endforeach
+                      </tbody>
                 </table>
             </div>
-            <div class="card-body">
-                
-            </div>
+            <div class="card-body"></div>
         @else
             <div class="card-body">
-                <strong>No hay registros de Inventario</strong>
+              <strong>No hay registros de Inventario</strong>
             </div>
         @endif
-    
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
