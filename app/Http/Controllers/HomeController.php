@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Membresia;
+use App\Models\ProductoServicio;
+use App\Models\Sucursal;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -23,7 +27,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $data['membresia'] = ProductoServicio::where('membresia_id',Auth::user()->membresia_id)->first();
+        $data['sucursal'] = Sucursal::find(Auth::user()->sucursal_id);
+        return view('home', $data);
     }
     public function dash()
     {

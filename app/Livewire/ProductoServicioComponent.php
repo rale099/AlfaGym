@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\ProductoServicio;
+use App\Models\Tipos;
 use Livewire\Component;
 
 class ProductoServicioComponent extends Component
@@ -11,8 +12,9 @@ class ProductoServicioComponent extends Component
 
     public function render()
     {
-        $proSer = ProductoServicio::with('membresias')->paginate(10);
-        return view('livewire.producto-servicio-component', compact('proSer'));
+        $data['proSer'] = ProductoServicio::with('membresias','tipos')->paginate(10);
+        $data['tipos']  = Tipos::all();
+        return view('livewire.producto-servicio-component', $data);
         
     }
 

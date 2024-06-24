@@ -110,7 +110,7 @@ return [
     */
 
     'preloader' => [
-        'enabled' => true,
+        'enabled' => false,
         'img' => [
             'path' => 'images/logo.jpg',
             'alt' => 'AdminLTE Preloader Image',

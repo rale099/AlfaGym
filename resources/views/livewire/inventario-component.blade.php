@@ -22,7 +22,7 @@
                                 <td class="text-center">{{$producto->inventarios == null ? '' : $producto->inventarios->stock}}</td>
                                 <td class="text-center">
                                   <div class="button-container">
-                                    <button type="button" class="btn btn-warning btn-sm">Editar</button>
+                                    <button type="button" class="btn btn-primary btn-sm">Editar</button>
                                     <button type="button" class="btn btn-danger btn-sm">Eliminar</button>
                                   </div>
                             </tr>
@@ -36,6 +36,8 @@
               <strong>No hay registros de Inventario</strong>
             </div>
         @endif
+
+<!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">

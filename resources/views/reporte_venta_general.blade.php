@@ -4,24 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reporte de Ventas PDF</title>
-    <link rel="stylesheet" href="/resources/css/app.css">
+    <!--  <link rel="stylesheet" href="/resources/css/app.css"> -->
+    <style>
+
+    </style>
 </head>
 <body>
     <header>
         <div class="header_logo">
-            <img src="/public/images/logo.jpg" alt="logo" id="logo">
+            <img src="data:image/png;base64,{{base64_encode(file_get_contents(public_path('images/logo.jpg')))}}" width="85px" alt="logo" id="logo">
+            <!-- <img src="{{asset('images/logo.jpg')}}" alt="logo" id="logo"> -->
             <h3>GIMNASIO ALFA FITNESS GYM</h3>
         </div>
     </header>
     <div class="container">
-        <h4 id="titulo_reporte">Reporte de Ventas</h4>
-        <table id="inv">
+        <h4 id="titulo_reporte">Reporte de Ventas General</h4>
+        <table id="inv" border="1">
             <thead>
                 <tr>
                     <th>No</th>
-                    <th></th>
                     <th>Fecha de la venta</th>
-                    <th></th>
                     <th>Total de la Venta</th>
                 </tr>
                 <?php $i=0 ?>
@@ -30,9 +32,7 @@
                 @foreach($Detalle_venta as $detalle)
                     <tr>
                         <td>{{ $i + 1 }}</td>
-                        <td></td>
                         <td>{{$detalle->fecha}}</td>
-                        <td></td>
                         <td>{{$detalle->total}}</td>
                     </tr>
                     <?php $i++; ?>

@@ -2,10 +2,9 @@
   <div class="card-header" @if ($categorias->count())
     <div class="card-body">
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Nueva categoría</button>
-    <table class="table table-striped table-bordered table-sm table-hover table-{color}">
-      
     
-         <thead class="thead-dark">
+    <table class="table table-striped table-bordered table-sm table-hover table-{color}">
+        <thead class="thead-dark">
           <tr>
             <th class="text-center">ID</th>
             <th class="text-center">Nombre</th>
@@ -18,7 +17,7 @@
             <td class="text-center">{{ $cate->id }}</td>
   <td class="text-center">{{ $cate->nombre }}</td>
   <td class="text-center">
-    <button type="button" class="btn btn-warning btn-sm">Editar</button>
+    <button type="button" class="btn btn-primary btn-sm">Editar</button>
     <button type="button" class="btn btn-danger btn-sm">Eliminar</button>
               </td>
             </tr>

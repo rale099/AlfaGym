@@ -9,6 +9,7 @@
 <body>
 <div>
     <div>
+      <br>
     <form class="row gy-2 gx-3 align-items-center" action="{{route('generar_pdf')}}" method="POST" target="_blank">
     @csrf
   <div class="col-auto">
@@ -21,15 +22,18 @@
       <input class="form-control" type="date" name="fecha_fin" id="fin">
     </div>
   </div>
+  
   <div class="col-auto">
+    <br>
     <label class="visually-hidden" for="autoSizingSelect">Tipo de reporte</label>
-    <select class="form-select" id="autoSizingSelect">
-      <option selected>General</option>
-      <option value="1">Detallado</option>
+    <select class="form-select" name="tipo_reporte" id="autoSizingSelect">
+      <option selected value='1'>General</option>
+      <option value="2">Detallado</option>
     </select>
   </div>
 
   <div class="col-auto">
+    <br>
     <button type="submit" class="btn btn-primary">Generar reporte</button>
   </div>
 </form>

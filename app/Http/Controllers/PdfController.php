@@ -23,12 +23,23 @@ class PdfController extends Controller
         $fecha_inicio   = $request->fecha_inicio;
         $fecha_fin      = $request->fecha_fin;
 
-        $Detalle_venta = Venta::select(DB::raw('DATE(fecha) as fecha, SUM(valor_total) as total'))
-        ->whereBetween('fecha', [$fecha_inicio, $fecha_fin])
-        ->groupBy(DB::raw('DATE(fecha)'))
-        ->get();
+        if($request->tipo_reporte == '1'){
+            $Detalle_venta = Venta::select(DB::raw('DATE(fecha) as fecha, SUM(valor_total) as total'))
+            ->whereBetween('fecha', [$fecha_inicio, $fecha_fin])
+            ->groupBy(DB::raw('DATE(fecha)'))
+            ->get();
 
-        $html = view('view_pdf', compact('Detalle_venta'))->render();
+            $html = view('reporte_venta_general', compact('Detalle_venta'))->render();
+        }else{
+            $Detalle_venta = Venta::with('detalle_venta.producto_servicios')
+            ->whereBetween('fecha', [$fecha_inicio, $fecha_fin])
+            ->get();
+            $html = view('reporte_venta_detallado', compact('Detalle_venta'))->render();
+        }
+
+
+        //echo $html;
+        //die();
 
         $dompdf = new Dompdf();
 

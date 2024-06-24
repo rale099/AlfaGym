@@ -36,7 +36,7 @@
     @endif
 
     @if($abrirDetalles)
-        @include('livewire.modal-detalle-ventas')
+        @include('livewire.modal.modal-detalle-ventas')
     @endif
 </div>
 </div>

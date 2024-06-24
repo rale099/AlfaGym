@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('detalle_compras', function (Blueprint $table) {
             $table->id();
-            $table->decimal('precio_unitario', 8, 2);
             $table->decimal('cantidad_total', 8, 2);
             $table->unsignedBigInteger('compra_producto_id');
             $table->foreign('compra_producto_id')->references('id')->on('compra_productos');

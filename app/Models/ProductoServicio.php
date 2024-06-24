@@ -9,7 +9,7 @@ class ProductoServicio extends Model
 {
     use HasFactory;
     public function tipos(){
-        return $this->hasMany(Tipo::class);
+        return $this->belongsTo(Tipos::class, 'tipo_id', 'id');
     }
     public function membresias(){
         return $this->belongsTo(Membresia::class);

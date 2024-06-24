@@ -16,7 +16,7 @@
                   <td class="text-center">{{$tipo->id}}</td>
                   <td class="text-center">{{$tipo->nombre}}</td>
                   <td class="text-center">
-                    <a href="#" class="btn btn-sm btn-warning">Editar</a>
+                    <a href="#" class="btn btn-sm btn-primary">Editar</a>
                     <a href="#" class="btn btn-sm btn-danger">Eliminar</a>
                   </td>
                 </tr>

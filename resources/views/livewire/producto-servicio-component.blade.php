@@ -22,16 +22,15 @@
             </tr>
           </thead>
           <tbody>
-            
             @foreach ($proSer as $ps)
               <tr>
                 <td class="text-center">{{$ps->id}}</td>
                 <td class="text-center">{{$ps->nombre}}</td>
                 <td class="text-center">$ {{$ps->precio_unitario}}</td>
-                <td class="text-center">{{$ps->tipo_id == 1 ? 'producto' : 'membresia'}}</td>
+                <td class="text-center">{{$ps->tipos != null ? $ps->tipos->nombre : ''}}</td>
                 <td class="text-center">{{$ps->membresia_id}}</td>
                 <td class="text-center">
-                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal"> Editar </button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"> Editar </button>
               <!-- <button type="submit" class="btn btn-warning">Editar</button> -->
               <button type="submit" class="btn btn-danger"> Eliminar </button>
                 </td>
@@ -52,7 +51,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Registro de producto o servicio</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -62,19 +61,21 @@
       <div class="modal-body">
         <form>
           <div class="form-group">
-            <label for="productName">Nombre del Producto</label>
-            <input type="text" class="form-control" id="productName" placeholder="Ingrese el nombre del producto">
+            <label for="productName">Nombre del Producto o servicio</label>
+            <input type="text" class="form-control" id="productName" placeholder="Ingrese el nombre del producto o el servicio">
           </div>
           <div class="form-group">
-            <label for="productPrice">Precio del Producto</label>
-            <input type="number" class="form-control" id="productPrice" placeholder="Ingrese el precio del producto">
+            <label for="productPrice">Precio del Producto o servicio</label>
+            <input type="number" class="form-control" id="productPrice" placeholder="Ingrese el precio del producto o el servicio">
           </div>
           <div class="form-group">
             <label for="producto-servicioInput">Tipo:</label>
             <select class="form-control" id="categoriaInput">
               <option value="">Seleccione una categoría</option>
-              <option value="1">Producto  1</option>
-              <option value="2">Membresia 2</option>
+              @foreach($tipos as $tip)
+                <option value="{{$tip->id}}">{{$tip->nombre}}</option>
+              @endforeach
+            </select>
       </div>
       <div class="modal-footer">
       <button type="button" class="btn btn-success">Guardar Cambios</button>

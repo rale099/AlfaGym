@@ -24,22 +24,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-            /*Proveedores y Compras
-            Proveedor::insert()([
-                ''=>'',
-                ''=>'',
-            ]);
-            CompraProducto::insert()([
-                ''=>'',
-                ''=>'',
-            ]);
-            DetalleCompra::insert()([
-                'nombre'=>'',
-                'precio_unitario'=>'',
-                'cantidad_total'=>'',
-                'compra_producto_id'=>'',
-            ]);
-            */
             DB::table('equipos')->insert([
                 'id' => 1,
                 'tipo' => 'Equipo',
@@ -160,19 +144,15 @@ class DatabaseSeeder extends Seeder
                 'venta_id' => 2,
                 'producto_servicio_id' => 2,
             ]);
-            
-        
             //Roles, Sucursales y Usuarios
             DB::table('sucursales')->insert([
                 'nombre' => 'AlfaFitnessGymAguilares',
                 'direccion' => 'Aguilares',
             ]);
-
             //Tabla horarios
             $this->call([
                 HorariosSeeder::class
             ]);
-
             $this->call([
                 RoleSeeder::class
             ]);
@@ -180,6 +160,39 @@ class DatabaseSeeder extends Seeder
             $this->call([
                 UsuarioSeeder::class
             ]);
+
+            //Proveedores y Compras
+            DB::table('proveedores')->insert([
+                'id' => 1,
+                'nombre'=>'Tienda Denis',
+                'direccion'=>'a la vuelta',
+            ]);
+            DB::table('proveedores')->insert([
+                'id' => 2,
+                'nombre'=>'Agroferreteria',
+                'direccion'=>'a la par',
+            ]);
+            DB::table('compra_productos')->insert([
+                'id' => 1,
+                'valor_total'=> 20.00,
+                'proveedor_id'=> 1,
+            ]);
+            DB::table('compra_productos')->insert([
+                'id' => 2,
+                'valor_total'=> 10.00,
+                'proveedor_id'=> 2,
+            ]);
+            DB::table('detalle_compras')->insert([
+                'id' => 1,
+                'cantidad_total'=> 2,
+                'compra_producto_id'=>1,
+            ]);
+            DB::table('detalle_compras')->insert([
+                'id' => 2,
+                'cantidad_total'=> 1,
+                'compra_producto_id'=>2,
+            ]);
+
             /*DB::table('comentarios')->insert([
                 
             ]);

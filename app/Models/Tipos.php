@@ -5,10 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Tipo extends Model
+class Tipos extends Model
 {
-    use HasFactory;
-    public function tipo(){
-        return $this->hasMany(Tipo::class);
-    }
+    use HasFactory; 
 }
