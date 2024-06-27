@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nombre', 80);
             $table->string('direccion', 80);
+            $table->decimal('telefono', 10,0);
             $table->timestamps();
         });
     }

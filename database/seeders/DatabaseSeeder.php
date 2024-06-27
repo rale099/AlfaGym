@@ -28,13 +28,48 @@ class DatabaseSeeder extends Seeder
                 'id' => 1,
                 'tipo' => 'Equipo',
             ]);
+            DB::table('equipos')->insert([
+                'id' => 2,
+                'tipo' => 'Maquinaria',
+            ]);
             DB::table('inventario_equipos')->insert([
                 'nombre' => 'Mancuerna',
                 'peso' => 10,
                 'cantidad' => 3,
                 'equipo_id' => 1,
             ]);
-            
+            DB::table('inventario_equipos')->insert([
+                'nombre' => 'Mancuerna',
+                'peso' => 20,
+                'cantidad' => 2,
+                'equipo_id' => 1,
+            ]);
+            DB::table('inventario_equipos')->insert([
+                'nombre' => 'Mancuerna',
+                'peso' => 30,
+                'cantidad' => 3,
+                'equipo_id' => 1,
+            ]);
+            DB::table('inventario_equipos')->insert([
+                'nombre' => 'Prensa de piernas',
+                'cantidad' => 2,
+                'equipo_id' => 2,
+            ]);
+            DB::table('inventario_equipos')->insert([
+                'nombre' => 'Hack',
+                'cantidad' => 2,
+                'equipo_id' => 2,
+            ]);
+            DB::table('inventario_equipos')->insert([
+                'nombre' => 'Poleas',
+                'cantidad' => 2,
+                'equipo_id' => 2,
+            ]);
+            DB::table('inventario_equipos')->insert([
+                'nombre' => 'Maquina de hombros',
+                'cantidad' => 2,
+                'equipo_id' => 2,
+            ]);
             //Datos Productos y Servicios
             DB::table('categorias')->insert([
                 'id' => 1,
@@ -166,11 +201,13 @@ class DatabaseSeeder extends Seeder
                 'id' => 1,
                 'nombre'=>'Tienda Denis',
                 'direccion'=>'a la vuelta',
+                'telefono' => '75856509',
             ]);
             DB::table('proveedores')->insert([
                 'id' => 2,
                 'nombre'=>'Agroferreteria',
                 'direccion'=>'a la par',
+                'telefono' => '75076462',
             ]);
             DB::table('compra_productos')->insert([
                 'id' => 1,
@@ -193,11 +230,15 @@ class DatabaseSeeder extends Seeder
                 'compra_producto_id'=>2,
             ]);
 
-            /*DB::table('comentarios')->insert([
-                
+            DB::table('comentario_clientes')->insert([
+                'comentario' => 'Se necesita mantenimiento en la maquina de hombro',
+                'fecha_comentario' => Carbon::create('2024', '06','17')->toDateString(),
+                'user_id' => 1,
             ]);
             DB::table('notificaciones')->insert([
-                
-            ]);*/
+                'titulo' => 'Cerrado',
+                'mensaje' => 'El día 18 de junio el gimnasio estará cerrado por motivos personales',
+                'fecha_alerta' => Carbon::create('2024', '06','18')->toDateString(),
+            ]);
     }
 }

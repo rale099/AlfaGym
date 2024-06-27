@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('inventario_equipos', function (Blueprint $table) {
             $table->id();
             $table->string('nombre', 80);
-            $table->decimal('peso', 8,2);
+            $table->decimal('peso', 8,2)->nullable();
             $table->decimal('cantidad', 8,2 );
             $table->unsignedBigInteger('equipo_id');
             $table->foreign('equipo_id')->references('id')->on('equipos');

@@ -377,11 +377,11 @@ return [
             'submenu' => [
                         [
                             'text' => 'Proveedores',
-                            'url' => '/',
+                            'url' => '/proveedor',
                         ], 
                         [
                             'text' => 'Compras de productos',
-                            'url' => '/#',
+                            'url' => '/compra_pro',
                         ],
             ],
         ],

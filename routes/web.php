@@ -18,6 +18,9 @@ use App\Http\Controllers\SucursalController;
 use App\Http\Controllers\TipoController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\VentaController;
+use App\Http\Controllers\ProveedorController;
+use App\Http\Controllers\CompraProductoController;
+use App\Http\Controllers\DetalleProductoController;
 use App\Models\DetalleMembresia;
 use Illuminate\Support\Facades\Auth;
 
@@ -60,6 +63,9 @@ Route::middleware('can:admin.dash')->group(function(){
     Route::resource('notificaciones', NotificacionController::class);
     Route::resource('equipos', EquipoController::class);
     Route::resource('inventarioEqui', InventarioEquipoController::class);
+    Route::resource('proveedor', ProveedorController::class);
+    Route::resource('compra_pro', CompraProductoController::class);
+    Route::resource('detalle_pro', DetalleProductoController::class);
     Route::post('/generar_pdf', [PdfController::class, 'generar_pdf'])->name('generar_pdf');
     Route::get('/formulario', [PdfController::class, 'vista_generar'])->name('vista_generar');
 });
